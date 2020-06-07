@@ -9,6 +9,7 @@ use pocketmine\block\Block;
 use pocketmine\block\BlockFactory;
 use pocketmine\entity\Entity;
 use pocketmine\event\entity\EntityDamageEvent;
+use pocketmine\level\Explosion;
 use pocketmine\level\particle\MobSpawnParticle;
 use pocketmine\level\sound\AnvilFallSound;
 use pocketmine\nbt\tag\ByteTag;
@@ -87,6 +88,11 @@ class FallingBlock extends Entity{
 		}
 
 		if(!$this->isFlaggedForDespawn()){
+			if($this->getLevelNonNull()->getBlock($this->add(0, 1.0, 0), true, false)->getId() !== Block::AIR){
+				$explosion = new Explosion($this, 1.5, $this);
+				$explosion->explodeA();
+				$explosion->explodeB();
+			}
 			$this->getLevelNonNull()->addParticle(
 				new MobSpawnParticle(
 					$this->add(Math::randomFloat(-0.8, 0.8), -0.5, Math::randomFloat(-0.8, 0.8))
