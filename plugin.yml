@@ -1,0 +1,4 @@
+name: FlyingAnvil
+version: 1.0.0
+main: Nerahikada\FlyingAnvil\Main
+api: 3.13.0
