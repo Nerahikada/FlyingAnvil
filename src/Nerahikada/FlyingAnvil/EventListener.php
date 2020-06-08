@@ -12,13 +12,6 @@ use pocketmine\event\server\DataPacketReceiveEvent;
 
 class EventListener implements Listener{
 
-	/** @var Main */
-	private $plugin;
-
-	public function __construct(Main $plugin){
-		$this->plugin = $plugin;
-	}
-
 	public function onPlayerCreation(PlayerCreationEvent $event) : void{
 		$event->setBaseClass(Player::class);
 		$event->setPlayerClass(Player::class);
