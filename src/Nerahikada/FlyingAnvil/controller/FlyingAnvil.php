@@ -41,11 +41,12 @@ class FlyingAnvil{
 	}
 
 	private static function flyAnvil(Position $position) : void{
+		$block = $position->getLevel()->getBlock($position);
 		$position->getLevel()->setBlock($position, BlockFactory::get(Block::AIR), true);
 
 		$nbt = Entity::createBaseNBT($position->add(0.5, 0, 0.5));
-		$nbt->setInt("TileID", Block::ANVIL);
-		$nbt->setByte("Data", 0);
+		$nbt->setInt("TileID", $block->getId());
+		$nbt->setByte("Data", $block->getDamage());
 
 		$entity = Entity::createEntity("FlyingBlock", $position->getLevel(), $nbt);
 
