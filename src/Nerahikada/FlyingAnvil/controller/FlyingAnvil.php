@@ -47,10 +47,10 @@ class FlyingAnvil{
 		$nbt->setInt("TileID", Block::ANVIL);
 		$nbt->setByte("Data", 0);
 
-		$fall = Entity::createEntity("FlyingBlock", $position->getLevel(), $nbt);
+		$entity = Entity::createEntity("FlyingBlock", $position->getLevel(), $nbt);
 
-		if($fall !== null){
-			$fall->spawnToAll();
+		if($entity !== null){
+			$entity->spawnToAll();
 		}
 	}
 }
