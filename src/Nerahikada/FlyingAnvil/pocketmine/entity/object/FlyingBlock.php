@@ -20,7 +20,7 @@ use function get_class;
  * できれば \pocketmine\entity\object\FallingBlock を継承したかったが、
  * parent::entityBaseTick() を呼び出さなければいけないので断念
  */
-class FallingBlock extends Entity{
+class FlyingBlock extends Entity{
 	public const NETWORK_ID = self::FALLING_BLOCK;
 
 	public $width = 0.98;
