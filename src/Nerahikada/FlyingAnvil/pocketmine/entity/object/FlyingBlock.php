@@ -30,7 +30,7 @@ class FlyingBlock extends \pocketmine\entity\object\FallingBlock{
 		}
 
 		if(!$this->isFlaggedForDespawn()){
-			if($this->getLevelNonNull()->getBlock($this->add(0, 1.0, 0), true, false)->getId() !== Block::AIR){
+			if($this->getLevelNonNull()->getBlock($this->add(0, 1.2, 0), true, false)->getId() !== Block::AIR){
 				$explosion = new Explosion($this, 1.5, $this);
 				$explosion->explodeA();
 				$explosion->explodeB();
