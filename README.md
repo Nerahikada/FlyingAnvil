@@ -8,3 +8,6 @@
 ## 機能
 * 金床がお空へ羽ばたいてゆく
 * まあまあな確率でUIが消える/画面がブラックアウトする
+
+## ぷれびゅー
+[![Preview](https://img.youtube.com/vi/LVqqF2r5Rkc/0.jpg)](https://www.youtube.com/watch?v=LVqqF2r5Rkc)
